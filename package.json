@@ -1,17 +1,28 @@
 {
-  "name": "volatilerediscluster",
-  "version": "0.0.1",
-  "private": true,
+  "name": "zs-volatile-redis-cluster",
+  "version": "1.0.0",
+  "description": "Volatile redis clustering implementation",
   "main": "./lib/cluster-client",
+  "repository": {
+    "type": "git",
+    "url": "git@git.zipscene.com:zsapilibs/zs-volatile-redis-cluster.git"
+  },
   "scripts": {
+    "test": "node ./node_modules/.bin/mocha ./test -R spec"
   },
   "dependencies": {
+    "async": "^1.4.2",
+    "buffer-crc32": "^0.2.5",
     "config-extend": "0.0.6",
-    "async": "~0.2.9",
-    "redis": "crispy1989/node_redis",
-    "seed-random": "*",
-    "buffer-crc32": "*",
-    "yargs": "*",
-    "async": "*"
+    "redis": "^1.0.0",
+    "seed-random": "^2.2.0",
+    "yargs": "^3.25.0"
+  },
+  "publishConfig": {
+    "registry": "https://npm.zipscene.com/"
+  },
+  "devDependencies": {
+    "chai": "^3.2.0",
+    "mocha": "^2.3.2"
   }
 }
