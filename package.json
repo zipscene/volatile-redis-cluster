@@ -7,7 +7,9 @@
     "type": "git",
     "url": "git@git.zipscene.com:zsapilibs/zs-volatile-redis-cluster.git"
   },
-  "scripts": {},
+  "scripts": {
+    "test": "node ./node_modules/.bin/mocha ./test -R spec"
+  },
   "dependencies": {
     "async": "^1.4.2",
     "buffer-crc32": "^0.2.5",
@@ -18,5 +20,9 @@
   },
   "publishConfig": {
     "registry": "https://npm.zipscene.com/"
+  },
+  "devDependencies": {
+    "chai": "^3.2.0",
+    "mocha": "^2.3.2"
   }
 }
