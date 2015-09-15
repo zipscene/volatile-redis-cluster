@@ -1,0 +1,17 @@
+{
+  "name": "volatilerediscluster",
+  "version": "0.0.1",
+  "private": true,
+  "main": "./lib/cluster-client",
+  "scripts": {
+  },
+  "dependencies": {
+    "config-extend": "0.0.6",
+    "async": "~0.2.9",
+    "redis": "crispy1989/node_redis",
+    "seed-random": "*",
+    "buffer-crc32": "*",
+    "yargs": "*",
+    "async": "*"
+  }
+}
