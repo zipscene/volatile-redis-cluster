@@ -53,7 +53,12 @@ for((i=0;i<${NUM_SLAVES};i++)); do
 		cat "$SCRIPT_DIR/slave-redis.conf-template" | sed "s|__DIR__|${SLAVE_DIR}|g" | sed "s|__PORT__|${SLAVE_PORT}|g" > "$SLAVE_REDIS_CONF"
 		echo "Starting redis server $i"
 		redis-server "$SLAVE_REDIS_CONF"
-		sleep 3
+		STATUS=1
+		while [ $STATUS -ne 0 ]; do
+			sleep 0.1
+			redis-cli -p $SLAVE_PORT quit &>/dev/null
+			STATUS=$?
+		done
 		echo "Starting slave client $i"
 		cd "$BASE_DIR"
 		(
@@ -64,4 +69,5 @@ for((i=0;i<${NUM_SLAVES};i++)); do
 	) &
 done
 
-sleep 5
+sleep 2
+
