@@ -1,7 +1,5 @@
 #!/bin/bash
 
-IFCONFIG=/sbin/ifconfig
-
 if [ $# -ne 1 ]; then
 	echo 'Usage: $0 <SlaveRedisIP|Interface|"guess">'
 	exit 1
@@ -9,7 +7,7 @@ fi
 
 HARG=$1
 if [ "$HARG" = "guess" ]; then
-	SLAVEREDISIP="`$IFCONFIG | grep 'inet addr:' | cut -d : -f 2 | awk '{print $1}' | grep -Fv 127.0.0.1 | head -n1`"
+	SLAVEREDISIP="`ip -4 -o addr show | grep -Eo 'inet [0-9./]+ ' | cut -d ' ' -f 2 | cut -d '/' -f 1 | grep -Fv 127.0.0.1 | head -n1`"
 	if [ "a$SLAVEREDISIP" = "a" ]; then
 		echo "Could not guess IP address."
 		exit 2

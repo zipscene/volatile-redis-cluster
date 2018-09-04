@@ -16,16 +16,16 @@
     "test": "node ./node_modules/.bin/mocha ./test -R spec"
   },
   "dependencies": {
-    "async": "^1.4.2",
+    "async": "^2.6.1",
     "buffer-crc32": "^0.2.5",
-    "config-extend": "0.0.6",
-    "redis": "^1.0.0",
+    "config-extend": "0.1.1",
+    "redis": "^2.8.0",
     "seed-random": "^2.2.0",
-    "yargs": "^3.25.0"
+    "yargs": "^12.0.1"
   },
   "devDependencies": {
-    "chai": "^3.2.0",
-    "mocha": "^2.3.2"
+    "chai": "^4.1.2",
+    "mocha": "^5.2.0"
   },
   "license": "Apache-2.0"
 }

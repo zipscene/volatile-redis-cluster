@@ -17,7 +17,7 @@ describe('Volatile Redis Cluster', function() {
 		// Note: If having issues, replace 'stdio: "ignore"' with 'stdio: "inherit"' for these two
 		child_process.spawn('./scripts/run-coordinator.sh', [], { stdio: 'ignore' });
 		setTimeout(function() {
-			child_process.spawn('./scripts/run-slaves.sh', [ 'guess' ], { stdio: 'ignore' });
+			child_process.spawn('./scripts/run-slaves.sh', [ '127.0.0.1' ], { stdio: 'ignore' });
 			setTimeout(function() {
 				clusterClient = new ClusterClient({
 					host: 'localhost',
