@@ -1,6 +1,6 @@
 {
   "name": "volatile-redis-cluster",
-  "version": "1.1.1",
+  "version": "2.0.0",
   "description": "Volatile redis clustering implementation",
   "main": "./lib/cluster-client",
   "keywords": [
