@@ -5,9 +5,12 @@ if [ $# -ne 1 ]; then
 	exit 1
 fi
 
+IFCONFIG=/sbin/ifconfig
+IPCMD=ip
+
 HARG=$1
 if [ "$HARG" = "guess" ]; then
-	SLAVEREDISIP="`ip -4 -o addr show | grep -Eo 'inet [0-9./]+ ' | cut -d ' ' -f 2 | cut -d '/' -f 1 | grep -Fv 127.0.0.1 | head -n1`"
+	SLAVEREDISIP="`$IPCMD -4 -o addr show | grep -Eo 'inet [0-9./]+ ' | cut -d ' ' -f 2 | cut -d '/' -f 1 | grep -Fv 127.0.0.1 | head -n1`"
 	if [ "a$SLAVEREDISIP" = "a" ]; then
 		echo "Could not guess IP address."
 		exit 2
