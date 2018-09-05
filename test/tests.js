@@ -31,6 +31,7 @@ describe('Volatile Redis Cluster', function() {
 	after(function(done) {
 		child_process.spawn('./scripts/stop-slaves.sh', [], { stdio: 'ignore' });
 		child_process.spawn('./scripts/stop-coordinator.sh', [], { stdio: 'ignore' });
+		clusterClient.disconnect();
 		setTimeout(done, 2000);
 	});
 
