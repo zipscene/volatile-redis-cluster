@@ -1,6 +1,6 @@
 {
   "name": "volatile-redis-cluster",
-  "version": "2.2.0",
+  "version": "3.0.0",
   "description": "Volatile redis clustering implementation",
   "main": "./lib/cluster-client",
   "keywords": [
@@ -16,16 +16,16 @@
     "test": "node ./node_modules/.bin/mocha ./test -R spec"
   },
   "dependencies": {
-    "async": "^2.6.1",
-    "buffer-crc32": "^0.2.5",
+    "async": "^3.2.0",
+    "buffer-crc32": "^0.2.13",
     "config-extend": "0.1.1",
-    "redis": "^2.8.0",
+    "redis": "^3.0.2",
     "seed-random": "^2.2.0",
-    "yargs": "^12.0.1"
+    "yargs": "^16.0.3"
   },
   "devDependencies": {
-    "chai": "^4.1.2",
-    "mocha": "^5.2.0"
+    "chai": "^4.2.0",
+    "mocha": "^8.1.3"
   },
   "license": "Apache-2.0"
 }
